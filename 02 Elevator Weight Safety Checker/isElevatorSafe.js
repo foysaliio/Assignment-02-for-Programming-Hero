@@ -5,12 +5,15 @@ function isElevatorSafe(weights) {
 
   let total = 0;
   for (const weight of weights) {
+    if (typeof weight !== "number") {
+      return "Invalid";
+    }
     total += weight;
   }
 
   if (total <= 400) {
     return true;
-  } else if (total > 400) {
+  } else {
     return false;
   }
 }
